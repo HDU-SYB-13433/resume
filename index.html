@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沈逸博 - 数据分析师简历</title>
+<style>
+  /* ========== Reset & Base ========== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C19F67;
+    --gold-light: #D4B97A;
+    --gold-bg: #F9F5EE;
+    --dark: #2D2D2D;
+    --text: #414141;
+    --text-light: #595959;
+    --bg: #FFFFFF;
+    --sidebar-bg: #3A3A3A;
+    --sidebar-text: #F0F0F0;
+    --sidebar-heading: #C19F67;
+    --border: #E0E0E0;
+    --tag-bg: #F5F0E5;
+  }
+
+  html { font-size: 13px; -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Hiragino Sans GB", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: #f0f0f0;
+    line-height: 1.6;
+  }
+
+  /* ========== Page Container ========== */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: var(--bg);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.12);
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* ========== Sidebar ========== */
+  .sidebar {
+    width: 72mm;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 32px 22px 28px;
+    flex-shrink: 0;
+  }
+
+  .sidebar .avatar-area {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .sidebar .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 4px;
+  }
+
+  .sidebar .name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+  }
+
+  .sidebar .title {
+    font-size: 12px;
+    color: var(--gold-light);
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+
+  /* Sidebar sections */
+  .sidebar-section {
+    margin-bottom: 22px;
+  }
+
+  .sidebar-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sidebar-heading);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* Contact items */
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .contact-item .icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    margin-top: 1px;
+    fill: var(--gold);
+  }
+
+  /* Skill bars */
+  .skill-item {
+    margin-bottom: 10px;
+  }
+
+  .skill-item .skill-name {
+    font-size: 11.5px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .skill-item .skill-bar {
+    height: 5px;
+    background: #555;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .skill-item .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 3px;
+  }
+
+  /* Education in sidebar */
+  .edu-item {
+    margin-bottom: 14px;
+  }
+
+  .edu-item .edu-school {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .edu-item .edu-degree {
+    font-size: 13px;
+    color: var(--gold-light);
+    margin-top: 2px;
+  }
+
+  .edu-item .edu-date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+  }
+
+  .edu-item .edu-courses {
+    font-size: 12.5px;
+    color: #bbb;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  /* Certificates */
+  .cert-item {
+    font-size: 11px;
+    margin-bottom: 6px;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .cert-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ========== Main Content ========== */
+  .main {
+    flex: 1;
+    padding: 30px 28px 28px;
+  }
+
+  /* Section titles */
+  .section {
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--gold);
+  }
+
+  /* Work experience */
+  .exp-item {
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+
+  .exp-company {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .exp-role {
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .exp-date {
+    font-size: 10.5px;
+    color: #999;
+    white-space: nowrap;
+  }
+
+  .exp-list {
+    list-style: none;
+    margin-top: 6px;
+  }
+
+  .exp-list li {
+    font-size: 11.5px;
+    line-height: 1.7;
+    padding-left: 14px;
+    position: relative;
+    color: var(--text-light);
+  }
+
+  .exp-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+    top: 1px;
+  }
+
+  /* Project items */
+  .project-item {
+    margin-bottom: 14px;
+    padding: 12px;
+    background: var(--gold-bg);
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
+  }
+
+  .project-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .project-title .project-date {
+    font-weight: 400;
+    color: #999;
+    font-size: 10.5px;
+    margin-left: 8px;
+  }
+
+  .project-desc, .project-result {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--text-light);
+  }
+
+  .project-result {
+    margin-top: 4px;
+  }
+
+  .project-desc strong,
+  .project-result strong {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Self-evaluation tags */
+  .eval-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .eval-tag {
+    font-size: 11px;
+    padding: 5px 12px;
+    background: var(--tag-bg);
+    border-radius: 20px;
+    color: var(--text-light);
+    border: 1px solid #E8DFC8;
+  }
+
+  /* ========== Print Styles ========== */
+  @media print {
+    body { background: #fff; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      min-height: auto;
+    }
+    @page {
+      size: A4;
+      margin: 0;
+    }
+  }
+
+  /* ========== Responsive ========== */
+  @media screen and (max-width: 800px) {
+    .page {
+      width: 100%;
+      min-height: auto;
+      flex-direction: column;
+      margin: 0;
+    }
+    .sidebar {
+      width: 100%;
+      padding: 24px 20px;
+    }
+    .main {
+      padding: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- ====== Sidebar ====== -->
+  <aside class="sidebar">
+    <div class="avatar-area">
+      <div class="avatar-placeholder">沈</div>
+      <div class="name">沈逸博</div>
+      <div class="title">数据分析师</div>
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">联系方式</div>
+      <div class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        <span>13372326972</span>
+      </div>
+      <div class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        <span>浙江嘉兴桐乡 / 杭州</span>
+      </div>
+      <div class="contact-item">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/><circle cx="12" cy="7" r="1"/></svg>
+        <span>男 · 26岁 · 期望薪资 8-12K</span>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">专业技能</div>
+      <div class="skill-item">
+        <div class="skill-name"><span>Excel / Power Query</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name"><span>Power BI</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name"><span>SQL</span><span>80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name"><span>Python (Pandas)</span><span>75%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name"><span>Matplotlib</span><span>70%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name"><span>业务分析方法论</span><span>75%</span></div>
+        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">教育背景</div>
+      <div class="edu-item">
+        <div class="edu-school">杭州电子科技大学</div>
+        <div class="edu-degree">统计学 · 全日制本科</div>
+        <div class="edu-date">2019.09 - 2024.07</div>
+        <div class="edu-courses">主修：概率论与数理统计、应用回归分析、多元统计分析、时间序列分析、抽样调查、数据挖掘</div>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">证书与获奖</div>
+      <div class="cert-item">CET-4 英语四级证书</div>
+      <div class="cert-item">证券投资大赛二等奖（校赛）</div>
+      <div class="cert-item">创业班培训结业（6个月）</div>
+    </div>
+  </aside>
+
+  <!-- ====== Main Content ====== -->
+  <main class="main">
+    <!-- Work Experience -->
+    <div class="section">
+      <div class="section-title">
+        <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z"/></svg>
+        工作经历
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">百度AI数据产业基地（乌镇）</span>
+            <span class="exp-role"> · 数据运营助理</span>
+          </div>
+          <span class="exp-date">2025.06 - 2026.06</span>
+        </div>
+        <ul class="exp-list">
+          <li>负责自动驾驶图像标注（行人/交通标志/车道线）及文心一言大模型语料标注、内容审核项目的数据生产与质量管理，日均处理数据500+条</li>
+          <li>使用 Python Pandas 编写自动化数据清洗脚本，处理18000+条标注数据；使用 Excel Power Query 整合多平台300+ SKU订单数据，搭建月度销售分析模板，人工整理效率提升约40%</li>
+          <li>基于 Power BI 搭建跨项目运营监控看板（含审核进度、人员效能排名、错误分布等模块），实现数据自动刷新与异常预警，审核人效提升约25%</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">新凤鸣集团股份有限公司</span>
+            <span class="exp-role"> · 数据专员</span>
+          </div>
+          <span class="exp-date">2024.09 - 2025.05</span>
+        </div>
+        <ul class="exp-list">
+          <li>负责涤纶长丝（POY/FDY/DTY）及短纤生产线数据收集与汇总，涵盖日产量、产能利用率、原材料消耗、成品入库等核心指标，维护部门基础数据台账</li>
+          <li>使用 Excel 对生产、质检、物料数据进行多维度汇总分析，编制生产运营周报与月报，辅助管理层排产决策；协助建立关键指标异常预警机制，推动问题闭环处理</li>
+          <li>参与生产数据标准化工作，统一各车间数据录入口径与报表模板，提升数据准确性与跨部门协同效率</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">云策电子商务有限公司（杭州）</span>
+            <span class="exp-role"> · 数据分析实习生</span>
+          </div>
+          <span class="exp-date">2024.07 - 2024.09</span>
+        </div>
+        <ul class="exp-list">
+          <li>协助整理天猫店铺日常运营数据（UV/PV、转化率、客单价、GMV），使用 Excel 制作日报/周报，为运营策略调整提供数据支持</li>
+          <li>参与SKU销售数据清洗与分类，完成商品销量排名、退货率统计，协助竞品价格与促销数据的收集对比，为定价策略提供参考</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+      <div class="section-title">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        项目经历
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI数据审核效率优化与Power BI可视化看板<span class="project-date">2026.03 - 2026.05</span></div>
+        <div class="project-desc"><strong>项目背景及内容：</strong>针对AI标注业务量增长（日均1000+条）导致的审核效率瓶颈，梳理3个核心项目审核流程，确立审核量、通过率、驳回率、时效、人员效能五大指标；使用 Power Query 对接多项目数据源自动清洗合并；基于 Power BI 搭建综合运营看板，设置数据自动刷新与异常预警。</div>
+        <div class="project-result"><strong>成果：</strong>首个跨项目审核效率监控看板正式投入使用，管理层可实时查看审核进度；审核人效提升约25%，月度审核积压量下降约30%。</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">电商运营数据整理与销售趋势分析<span class="project-date">2025.10 - 2025.12</span></div>
+        <div class="project-desc"><strong>项目背景及内容：</strong>整合天猫、拼多多多平台300+ SKU、约3万条订单数据，使用 Excel Power Query 统一清洗字段格式与指标口径；从商品、时间、客户三维度进行销售分析；搭建可复用的月度销售分析模板。</div>
+        <div class="project-result"><strong>成果：</strong>识别3个销售高峰节点与2类持续滞销品类，为选品与促销排期提供依据；人工整理与报表制作时长缩短约40%，月度复盘效率提升约35%。</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">AI训练数据质量分析与标注效率优化<span class="project-date">2025.07 - 2025.09</span></div>
+        <div class="project-desc"><strong>项目背景及内容：</strong>使用 Python Pandas 整合团队近3个月图像与文本标注原始数据（18000+条），编写脚本进行清洗与自动化统计；利用 groupby、pivot_table 计算人均日标注量、分类错误率、返工率等核心指标；通过帕累托分析与 Matplotlib 可视化，定位高频错误类型与效率波动规律。</div>
+        <div class="project-result"><strong>成果：</strong>识别3类高频错误（漏标/边界框错误/属性混乱），推动规范修订与培训，标注错误率降低约25%；人均日标注效率提升约20%。</div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">基于多维度数据的证券投资策略分析<span class="project-date">2022.03 - 2022.06</span></div>
+        <div class="project-desc"><strong>项目背景及内容：</strong>在校参加证券投资大赛，收集10+只标的历史行情与财务指标，使用 Excel 与 Python 进行数据清洗；构建收益率、波动率、市盈率等分析体系，通过横向对比与趋势分析打分排序，用 Matplotlib 输出可视化图表。</div>
+        <div class="project-result"><strong>成果：</strong>团队获校级二等奖；掌握从数据清洗到可视化输出的完整分析流程。</div>
+      </div>
+    </div>
+
+    <!-- Self Evaluation -->
+    <div class="section">
+      <div class="section-title">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        自我评价
+      </div>
+      <div class="eval-list">
+        <span class="eval-tag">统计学专业背景</span>
+        <span class="eval-tag">完整数据分析流程</span>
+        <span class="eval-tag">Excel / SQL / Power BI / Python</span>
+        <span class="eval-tag">数据运营实战经验</span>
+        <span class="eval-tag">强学习力与自驱力</span>
+        <span class="eval-tag">跨部门沟通协作</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
